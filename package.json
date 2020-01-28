@@ -1,0 +1,28 @@
+{
+  "name": "koa-todolist",
+  "version": "1.0.0",
+  "description": "a todolist built using koa",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kranz912/koa-todolist.git"
+  },
+  "keywords": [
+    "todolist",
+    "koa",
+    "nodejs"
+  ],
+  "author": "kranz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kranz912/koa-todolist/issues"
+  },
+  "homepage": "https://github.com/kranz912/koa-todolist#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/register": "^7.8.3"
+  }
+}
