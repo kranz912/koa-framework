@@ -4,7 +4,8 @@
   "description": "a todolist built using koa",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,8 @@
   "devDependencies": {
     "@babel/core": "^7.8.3",
     "@babel/register": "^7.8.3"
+  },
+  "dependencies": {
+    "koa": "^2.11.0"
   }
 }
