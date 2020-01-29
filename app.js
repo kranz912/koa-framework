@@ -1,8 +1,9 @@
 require("@babel/register");
-
+const glob = require('glob');
+const path = require('path');
 const Koa = require('koa');
 const app = new Koa();
-
+const static = require('koa-static');
 const PORT = process.env.PORT || 3000;
 
 
@@ -23,10 +24,26 @@ app.use(async (ctx,next)=>{
 });
 
 
-app.use(async ctx =>{
-  ctx.body = 'Hello World';
-});
+const controllers = glob.sync(path.join(__dirname,'**/*-controller.js')).map(controllerPath => require(controllerPath));
+const styles = glob.sync(path.join(__dirname,'**/*.css')).map(stylepath => {return path.dirname(path.relative('',stylepath))});
 
+console.log(styles)
+
+for (var style in styles) {
+  console.log(style)
+  if (styles.hasOwnProperty(style)) {
+    console.log(styles[style])
+    app.use(static(styles[style]));
+  }
+}
+
+
+
+for (var controller in controllers) {
+  if (controllers.hasOwnProperty(controller)) {
+    app.use(controllers[controller]);
+  }
+}
 
 
 

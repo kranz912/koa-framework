@@ -1,0 +1,17 @@
+
+<link rel="stylesheet" href="bootstrap.min.css">
+
+<link rel="stylesheet" href="style.css">
+
+
+
+<div class="container">
+  <h1>Todo list</h1>
+  {{#each post}}
+    <div class="col-md-12">
+        <h3>{{this.title}}</h3>
+        <p>{{this.content}}</p>
+    </div>
+  {{/each}}
+
+</div>
