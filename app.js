@@ -25,14 +25,12 @@ app.use(async (ctx,next)=>{
 
 
 const controllers = glob.sync(path.join(__dirname,'**/*-controller.js')).map(controllerPath => require(controllerPath));
-const styles = glob.sync(path.join(__dirname,'**/*.css')).map(stylepath => {return path.dirname(path.relative('',stylepath))});
+const styles = glob.sync(path.join(__dirname,'**/*.css')).map(stylepath =>  path.dirname(stylepath));
 
-console.log(styles)
 
 for (var style in styles) {
-  console.log(style)
+
   if (styles.hasOwnProperty(style)) {
-    console.log(styles[style])
     app.use(static(styles[style]));
   }
 }
