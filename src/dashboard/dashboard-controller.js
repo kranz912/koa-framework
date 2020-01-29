@@ -7,6 +7,8 @@ class Dashboard extends Controller{
   constructor() {
     super();
   }
+
+
   router.get('/dashboar',async ctx=>{
     ctx.body ='dahsboard';
   });
