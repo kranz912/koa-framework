@@ -1,20 +1,22 @@
-require("@babel/register");
+require("@babel/register")
 const Controller= require('../../base/Controller');
+
 const Router = require('koa-router');
-const router = new this.Router();
+
+const router = new Router();
+
 class Dashboard extends Controller{
 
   constructor() {
     super();
+    router.get('/dashboard', this.index);
+   }
+
+  async Index(ctx){
+    ctx.body = "dashboard"
   }
 
 
-  router.get('/dashboar',async ctx=>{
-    ctx.body ='dahsboard';
-  });
-
-
 }
-
-const dash = new Dashboard()
-module.exports = dash.router.routes();
+console.log(Dashboard.index)
+module.exports = router.routes();

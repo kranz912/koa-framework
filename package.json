@@ -24,6 +24,7 @@
   "homepage": "https://github.com/kranz912/koa-todolist#readme",
   "devDependencies": {
     "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/register": "^7.8.3"
   },
   "dependencies": {
@@ -36,5 +37,7 @@
     "koa-static": "^5.0.0",
     "passport-http": "^0.3.0",
     "passport-local": "^1.0.0"
-  }
+  },
+  "plugins": ["@babel/plugin-proposal-class-properties"]
+
 }
